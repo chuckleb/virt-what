@@ -1,0 +1,174 @@
+=head1 NAME
+
+virt-what - detect if we are running in a virtual machine
+
+=head1 SUMMARY
+
+virt-what [options]
+
+=head1 DESCRIPTION
+
+C<virt-what> is a shell script which can be used to detect if the
+program is running in a virtual machine.
+
+The program prints out a list of "facts" about the virtual machine,
+derived from heuristics.  One fact is printed per line.
+
+If nothing is printed and the script exits with code 0 (no error),
+then it can mean I<either> that the program is running on bare-metal
+I<or> the program is running inside a type of virtual machine which we
+don't know about or cannot detect.
+
+=head1 FACTS
+
+=over 4
+
+=item openvz
+
+The guest appears to be running inside an OpenVZ or Virtuozzo
+container.
+
+Status: contributed by Evgeniy Sokolov
+
+=item qemu
+
+This is QEMU or KVM.
+
+Status: confirmed by RWMJ.  Currently we have no way to
+tell the difference between QEMU and KVM guests.
+
+=item virtualpc
+
+The guest appears to be running on Microsoft VirtualPC.
+
+Status: not confirmed
+
+=item vmware
+
+The guest appears to be running on VMware.
+
+Status: not confirmed
+
+=item xen
+
+The guest appears to be running on Xen.
+
+Status: confirmed by RWMJ
+
+=item xen-dom0
+
+This is the Xen dom0 (privileged domain).
+
+Status: confirmed by RWMJ
+
+=item xen-domU
+
+This is a Xen domU (normal guest domain).
+
+Status: confirmed by RWMJ
+
+=back
+
+=head1 IMPORTANT NOTE
+
+Most of the time, using this program is the I<wrong> thing to do.
+Instead you should detect the specific features you actually want to
+use.  (As an example, if you wanted to issue Xen hypervisor commands
+you would look for the C</proc/xen/privcmd> file).
+
+However people keep asking for this, so we provide it.  There are a
+few legitimate uses:
+
+=over 4
+
+=item Bug reporting tool
+
+If you think that virtualization could affect how your program runs,
+then you might use C<virt-what> to report this in a bug reporting
+tool.
+
+=item Status display and monitoring tools
+
+You might include this information in status and monitoring programs.
+
+=back
+
+=head1 SEE ALSO
+
+L<http://www.libvirt.org/>,
+L<http://et.redhat.com/~rjones/>,
+L<http://www.vmware.com/>,
+L<http://www.microsoft.com/windows/products/winfamily/virtualpc>,
+L<http://xensource.com/>,
+L<http://bellard.org/qemu/>,
+L<http://kvm.qumranet.com/>,
+L<http://openvz.org/>
+
+=head1 AUTHORS
+
+Richard W.M. Jones <rjones @ redhat . com>
+
+=head1 COPYRIGHT
+
+(C) Copyright 2008 Red Hat Inc.,
+L<http://libvirt.org/>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+=head1 REPORTING BUGS
+
+Bugs can be viewed on the Red Hat Bugzilla page:
+L<https://bugzilla.redhat.com/>.
+
+If you find a bug in virt-what, please follow these steps to report it:
+
+=over 4
+
+=item 1. Check for existing bug reports
+
+Go to L<https://bugzilla.redhat.com/> and search for similar bugs.
+Someone may already have reported the same bug, and they may even
+have fixed it.
+
+=item 2. Capture debug and error messages
+
+Run
+
+ virt-what > virt-what.log 2>&1
+
+and keep I<virt-what.log>.  It may contain error messages which you
+should submit with your bug report.
+
+=item 3. Get version of virt-what and version of libvirt.
+
+Run
+
+ virt-what --version
+
+=item 4. Submit a bug report.
+
+Go to L<https://bugzilla.redhat.com/> and enter a new bug.
+Please describe the problem in as much detail as possible.
+
+Remember to include the version numbers (step 3) and the debug
+messages file (step 2).
+
+=item 5. Assign the bug to rjones @ redhat.com
+
+Assign or reassign the bug to B<rjones @ redhat.com> (without the
+spaces).  You can also send me an email with the bug number if you
+want a faster response.
+
+=back

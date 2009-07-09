@@ -1,0 +1,15 @@
+virt-what
+Copyright (C) 2008 Red Hat Inc.
+
+Build:
+
+  make
+
+To install (usually as root):
+
+  make install
+
+also:
+
+  make prefix=/usr install
+  make DESTDIR=/tmp/somewhere install

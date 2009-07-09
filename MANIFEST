@@ -1,0 +1,7 @@
+.cvsignore
+COPYING
+Makefile
+MANIFEST
+README
+virt-what.pod
+virt-what.sh
