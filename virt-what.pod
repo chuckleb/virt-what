@@ -23,47 +23,58 @@ don't know about or cannot detect.
 
 =over 4
 
-=item openvz
+=item B<openvz>
 
 The guest appears to be running inside an OpenVZ or Virtuozzo
 container.
 
 Status: contributed by Evgeniy Sokolov
 
-=item qemu
+=item B<kvm>
 
-This is QEMU or KVM.
+This is KVM.
 
-Status: confirmed by RWMJ.  Currently we have no way to
-tell the difference between QEMU and KVM guests.
+Status: confirmed by RWMJ.
 
-=item virtualpc
+=item B<qemu>
+
+This is QEMU.
+
+Status: confirmed by RWMJ.
+
+=item B<virtualpc>
 
 The guest appears to be running on Microsoft VirtualPC.
 
 Status: not confirmed
 
-=item vmware
+=item B<vmware>
 
 The guest appears to be running on VMware.
 
 Status: not confirmed
 
-=item xen
+=item B<xen>
 
 The guest appears to be running on Xen.
 
 Status: confirmed by RWMJ
 
-=item xen-dom0
+=item B<xen-dom0>
 
 This is the Xen dom0 (privileged domain).
 
 Status: confirmed by RWMJ
 
-=item xen-domU
+=item B<xen-domU>
 
-This is a Xen domU (normal guest domain).
+This is a Xen domU (paravirtualized guest domain).
+
+Status: confirmed by RWMJ
+
+=item B<xen-hvm>
+
+This is a Xen guest fully virtualized (HVM).
 
 Status: confirmed by RWMJ
 

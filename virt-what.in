@@ -1,6 +1,6 @@
 #!/bin/bash -
-#
-# Copyright (C) 2008 Red Hat Inc.
+# @configure_input@
+# Copyright (C) 2008-2009 Red Hat Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -87,9 +87,17 @@ if [ -d /proc/vz -a ! -d /proc/bc ]; then
     echo openvz
 fi
 
+# To tell if it is Xen and KVM HVM (fully virtualized) we can use this
+# helper C program.
+
+cpuid=`virt-what-cpuid-helper`
+
 # Check for Xen.
 
-if [ -f /proc/xen/privcmd ]; then
+if [ "$cpuid" = "XenVMMXenVMM" ]; then
+    echo xen; echo xen-hvm
+    is_xen=1
+elif [ -f /proc/xen/privcmd ]; then
     echo xen; echo xen-dom0
     is_xen=1
 elif [ -f /proc/xen/capabilities ]; then
@@ -109,7 +117,10 @@ if [ ! "$is_xen" ]; then
     # uses QEMU for its device model.
 
     if grep -q 'QEMU' /proc/cpuinfo; then
-        # XXX How to distinguish between QEMU & KVM?
-	echo qemu
+	if [ "$cpuid" = "KVMKVMKVM" ]; then
+	    echo kvm
+	else
+	    echo qemu
+	fi
     fi
 fi

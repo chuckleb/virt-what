@@ -1,9 +1,19 @@
 virt-what
-Copyright (C) 2008 Red Hat Inc.
+Copyright (C) 2008-2009 Red Hat Inc.
+----------------------------------------------------------------------
+
+This is a collection of scripts which you can use to work out what
+sort of virtualization you are running inside.
 
 Build:
 
+  ./configure
   make
+
+If you want to run it from the local directory, then you have to set
+the PATH:
+
+  PATH=.:$PATH ./virt-what
 
 To install (usually as root):
 
