@@ -56,6 +56,7 @@ main()
   /* Possible values:
    * KVMKVMKVM     KVM guest
    * XenVMMXenVMM  Xen HVM guest
+   * VMwareVMware  VMware guest
    */
 
   return 0;
