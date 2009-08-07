@@ -87,6 +87,12 @@ if [ -d /proc/vz -a ! -d /proc/bc ]; then
     echo openvz
 fi
 
+# Check for UML.
+
+if grep -q 'UML' /proc/cpuinfo; then
+    echo uml
+fi
+
 # To tell if it is Xen and KVM HVM (fully virtualized) we can use this
 # helper C program.
 
