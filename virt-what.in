@@ -63,7 +63,12 @@ if [ "$uid" != 0 ]; then
     fail "this script must be run as root"
 fi
 
-PATH=/sbin:/usr/sbin:$PATH
+# Add /sbin and /usr/sbin to the path so we can find system
+# binaries like dmicode.
+# Add /usr/libexec to the path so we can find the helper binary.
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+PATH=@libexecdir@:/sbin:/usr/sbin:$PATH
 
 # Check for various products in the BIOS information.
 
