@@ -1,3 +1,5 @@
+=encoding utf8
+
 =head1 NAME
 
 virt-what - detect if we are running in a virtual machine
@@ -41,6 +43,18 @@ Status: confirmed by RWMJ.
 This is QEMU.
 
 Status: confirmed by RWMJ.
+
+=item B<uml>
+
+This is a User-Mode Linux (UML) guest.
+
+Status: contributed by Laurent Léonard
+
+=item B<virtualbox>
+
+This is a VirtualBox guest.
+
+Status: contributed by Laurent Léonard
 
 =item B<virtualpc>
 

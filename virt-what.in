@@ -78,7 +78,7 @@ if echo "$dmi" | grep -q 'Manufacturer: Microsoft Corporation'; then
 fi
 
 # Check for VirtualBox.
-
+# Added by Laurent Léonard.
 if echo "$dmi" | grep -q 'Manufacturer: innotek GmbH'; then
     echo virtualbox
 fi
@@ -94,7 +94,7 @@ if [ -d /proc/vz -a ! -d /proc/bc ]; then
 fi
 
 # Check for UML.
-
+# Added by Laurent Léonard.
 if grep -q 'UML' /proc/cpuinfo; then
     echo uml
 fi
