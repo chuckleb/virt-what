@@ -13,7 +13,7 @@ Build:
 If you want to run it from the local directory, then you have to set
 the PATH:
 
-  PATH=.:$PATH ./virt-what
+  PATH=.:$PATH virt-what
 
 To install (usually as root):
 
