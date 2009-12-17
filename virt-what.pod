@@ -66,7 +66,7 @@ Status: not confirmed
 
 The guest appears to be running on VMware.
 
-Status: not confirmed
+Status: confirmed by RWMJ
 
 =item B<xen>
 
