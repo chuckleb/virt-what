@@ -21,7 +21,7 @@ CLEANFILES = virt-what.1 virt-what.txt
 
 AM_CPPFLAGS = -Wall
 
-bin_SCRIPTS = virt-what
+sbin_SCRIPTS = virt-what
 libexec_PROGRAMS = virt-what-cpuid-helper
 
 man_MANS = virt-what.1
