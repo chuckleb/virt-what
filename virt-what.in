@@ -121,11 +121,13 @@ fi
 if [ "$cpuid" = "XenVMMXenVMM" ]; then
     echo xen; echo xen-hvm
     is_xen=1
-elif [ -f /proc/xen/privcmd ]; then
-    echo xen; echo xen-dom0
-    is_xen=1
 elif [ -f /proc/xen/capabilities ]; then
-    echo xen; echo xen-domU
+    echo xen
+    if grep -q "control_d" /proc/xen/capabilities; then
+        echo xen-dom0
+    else
+        echo xen-domU
+    fi
     is_xen=1
 elif [ -d /proc/xen ]; then
     # This directory can be present when Xen paravirt drivers are
