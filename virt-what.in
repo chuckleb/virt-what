@@ -88,6 +88,12 @@ elif echo "$dmi" | grep -q 'Manufacturer: VMware'; then
     echo vmware
 fi
 
+# Check for Hyper-V.
+# http://blogs.msdn.com/b/sqlosteam/archive/2010/10/30/is-this-real-the-metaphysics-of-hardware-virtualization.aspx
+if [ "$cpuid" = "Microsoft Hv" ]; then
+    echo hyperv
+fi
+
 # Check for VirtualPC.
 
 if echo "$dmi" | grep -q 'Manufacturer: Microsoft Corporation'; then

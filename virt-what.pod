@@ -25,18 +25,24 @@ don't know about or cannot detect.
 
 =over 4
 
-=item B<openvz>
+=item B<hyperv>
 
-The guest appears to be running inside an OpenVZ or Virtuozzo
-container.
+This is Hyper-V.
 
-Status: contributed by Evgeniy Sokolov
+Status: from MSDN description, not tested.
 
 =item B<kvm>
 
 This is KVM.
 
 Status: confirmed by RWMJ.
+
+=item B<openvz>
+
+The guest appears to be running inside an OpenVZ or Virtuozzo
+container.
+
+Status: contributed by Evgeniy Sokolov
 
 =item B<qemu>
 
