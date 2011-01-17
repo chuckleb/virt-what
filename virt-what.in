@@ -1,6 +1,6 @@
 #!/bin/bash -
 # @configure_input@
-# Copyright (C) 2008-2010 Red Hat Inc.
+# Copyright (C) 2008-2011 Red Hat Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -120,6 +120,11 @@ fi
 # Added by Laurent Léonard.
 if grep -q 'UML' /proc/cpuinfo; then
     echo uml
+fi
+
+# Check for IBM PowerVM Lx86 Linux/x86 emulator.
+if grep -q '^vendor_id.*PowerVM Lx86' /proc/cpuinfo; then
+    echo powervm_lx86
 fi
 
 # Check for Xen.

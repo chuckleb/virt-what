@@ -44,6 +44,12 @@ container.
 
 Status: contributed by Evgeniy Sokolov
 
+=item B<powervm_lx86>
+
+The guest is running inside IBM PowerVM Lx86 Linux/x86 emulator.
+
+Status: data supplied by Jeffrey Scheel, not confirmed
+
 =item B<qemu>
 
 This is QEMU.
