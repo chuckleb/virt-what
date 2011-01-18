@@ -138,8 +138,7 @@ You might include this information in status and monitoring programs.
 
 =head1 SEE ALSO
 
-L<http://www.libvirt.org/>,
-L<http://et.redhat.com/~rjones/>,
+L<http://people.redhat.com/~rjones/virt-what/>,
 L<http://www.vmware.com/>,
 L<http://www.microsoft.com/windows/products/winfamily/virtualpc>,
 L<http://xensource.com/>,
@@ -153,8 +152,8 @@ Richard W.M. Jones <rjones @ redhat . com>
 
 =head1 COPYRIGHT
 
-(C) Copyright 2008 Red Hat Inc.,
-L<http://libvirt.org/>
+(C) Copyright 2008-2011 Red Hat Inc.,
+L<http://people.redhat.com/~rjones/virt-what/>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
