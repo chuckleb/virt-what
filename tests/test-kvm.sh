@@ -1,4 +1,4 @@
-# Makefile for virt-what
+# Test for KVM
 # Copyright (C) 2008-2011 Red Hat Inc.
 #
 # This program is free software; you can redistribute it and/or modify
@@ -15,29 +15,20 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-EXTRA_DIST = virt-what.in virt-what.pod
+root=tests/kvm
 
-CLEANFILES = virt-what.1 virt-what.txt
+output="$(./virt-what --test-root=$root 2>&1)"
+expected="kvm"
 
-AM_CPPFLAGS = -Wall
-
-sbin_SCRIPTS = virt-what
-libexec_PROGRAMS = virt-what-cpuid-helper
-
-man_MANS = virt-what.1
-
-virt-what.1: virt-what.pod
-	pod2man -c "Virtualization Support" --release "$(PACKAGE)-$(VERSION)" \
-	  $< > $@
-
-virt-what.txt: virt-what.pod
-	pod2text $< > $@
-
-TESTS = \
-	tests/test-baremetal.sh \
-	tests/test-esx4.1.sh \
-	tests/test-kvm.sh \
-	tests/test-qemu.sh
-# tests/test-virtualbox.sh \
-# tests/test-xen-dom0.sh \
-# tests/test-xen-domU.sh
+if [ "$output" != "$expected" ]; then
+    echo "$0: test failed because output did not match expected"
+    echo "Expected output was:"
+    echo "----------------------------------------"
+    echo "$expected"
+    echo "----------------------------------------"
+    echo "But the actual output of the program was:"
+    echo "----------------------------------------"
+    echo "$output"
+    echo "----------------------------------------"
+    exit 1
+fi
