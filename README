@@ -10,10 +10,18 @@ Build:
   ./configure
   make
 
+If you want to run the automated tests:
+
+  make check
+
 If you want to run it from the local directory, then you have to set
 the PATH:
 
   PATH=.:$PATH virt-what
+
+or since virt-what normally needs to be run as root:
+
+  su -c 'PATH=.:$PATH virt-what'
 
 To install (usually as root):
 
