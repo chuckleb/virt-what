@@ -127,6 +127,12 @@ if grep -q '^vendor_id.*PowerVM Lx86' /proc/cpuinfo; then
     echo powervm_lx86
 fi
 
+# Check for Hitachi Virtualization Manager (HVM) Virtage logical partitioning.
+if echo "$dmi" | grep -q 'Manufacturer.*HITACHI' &&
+   echo "$dmi" | grep -q 'Product.*HVM LPAR'; then
+    echo virtage
+fi
+
 # Check for Xen.
 
 if [ "$cpuid" = "XenVMMXenVMM" ]; then

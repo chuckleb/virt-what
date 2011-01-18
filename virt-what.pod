@@ -62,6 +62,12 @@ This is a User-Mode Linux (UML) guest.
 
 Status: contributed by Laurent Léonard
 
+=item B<virtage>
+
+This is Hitachi Virtualization Manager (HVM) Virtage logical partitioning.
+
+Status: data supplied by Bhavna Sarathy, not confirmed
+
 =item B<virtualbox>
 
 This is a VirtualBox guest.
