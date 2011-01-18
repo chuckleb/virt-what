@@ -77,7 +77,7 @@ cpuid=`virt-what-cpuid-helper`
 
 # Check for various products in the BIOS information.
 
-dmi=`dmidecode 2>&1`
+dmi=`LANG=C dmidecode 2>&1`
 
 # Check for VMware.
 # cpuid check added by Chetan Loke.
