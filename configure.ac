@@ -1,5 +1,5 @@
 # virt-what
-# Copyright (C) 2008-2010 Red Hat Inc.
+# Copyright (C) 2008-2011 Red Hat Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-AC_INIT([virt-what],[1.3])
+AC_INIT([virt-what],[1.4])
 AM_INIT_AUTOMAKE([foreign])
 
 dnl Check for basic C environment.
