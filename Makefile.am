@@ -15,7 +15,29 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-EXTRA_DIST = virt-what.in virt-what.pod
+EXTRA_DIST = \
+	virt-what.in \
+	virt-what.pod \
+	tests/baremetal/proc/cpuinfo \
+	tests/baremetal/sbin/dmidecode \
+	tests/baremetal/sbin/id \
+	tests/baremetal/sbin/virt-what-cpuid-helper \
+	tests/esx4.1/proc/cpuinfo \
+	tests/esx4.1/sbin/dmidecode \
+	tests/esx4.1/sbin/id \
+	tests/esx4.1/sbin/virt-what-cpuid-helper \
+	tests/kvm/proc/cpuinfo \
+	tests/kvm/sbin/dmidecode \
+	tests/kvm/sbin/id \
+	tests/kvm/sbin/virt-what-cpuid-helper \
+	tests/qemu/proc/cpuinfo \
+	tests/qemu/sbin/dmidecode \
+	tests/qemu/sbin/id \
+	tests/qemu/sbin/virt-what-cpuid-helper \
+	tests/test-baremetal.sh \
+	tests/test-esx4.1.sh \
+	tests/test-kvm.sh \
+	tests/test-qemu.sh
 
 CLEANFILES = virt-what.1 virt-what.txt
 
