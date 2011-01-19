@@ -45,6 +45,12 @@ EXTRA_DIST = \
 	tests/qemu/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-dom0/proc/cpuinfo \
 	tests/rhel5-xen-dom0/proc/self/status \
+	tests/rhel5-xen-dom0/proc/xen/balloon \
+	tests/rhel5-xen-dom0/proc/xen/capabilities \
+	tests/rhel5-xen-dom0/proc/xen/privcmd \
+	tests/rhel5-xen-dom0/proc/xen/xenbus \
+	tests/rhel5-xen-dom0/proc/xen/xsd_kva \
+	tests/rhel5-xen-dom0/proc/xen/xsd_port \
 	tests/rhel5-xen-dom0/sbin/dmidecode \
 	tests/rhel5-xen-dom0/sbin/id \
 	tests/rhel5-xen-dom0/sbin/virt-what-cpuid-helper \
@@ -55,6 +61,10 @@ EXTRA_DIST = \
 	tests/rhel5-xen-domU-hvm/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-domU-pv/proc/cpuinfo \
 	tests/rhel5-xen-domU-pv/proc/self/status \
+	tests/rhel5-xen-domU-pv/proc/xen/balloon \
+	tests/rhel5-xen-domU-pv/proc/xen/capabilities \
+	tests/rhel5-xen-domU-pv/proc/xen/privcmd \
+	tests/rhel5-xen-domU-pv/proc/xen/xenbus \
 	tests/rhel5-xen-domU-pv/sbin/dmidecode \
 	tests/rhel5-xen-domU-pv/sbin/id \
 	tests/rhel5-xen-domU-pv/sbin/virt-what-cpuid-helper \
