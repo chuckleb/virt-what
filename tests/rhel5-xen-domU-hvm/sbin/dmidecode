@@ -1,0 +1,107 @@
+#!/bin/sh -
+# See https://bugzilla.redhat.com/show_bug.cgi?id=210295
+cat <<'EOF'
+# dmidecode 2.10
+SMBIOS 2.4 present.
+10 structures occupying 339 bytes.
+Table at 0x000E901F.
+
+Handle 0x0000, DMI type 0, 24 bytes
+BIOS Information
+	Vendor: Xen
+	Version: 3.1.2-238.el5
+	Release Date: 11/24/2010
+	Address: 0xE8000
+	Runtime Size: 96 kB
+	ROM Size: 64 kB
+	Characteristics:
+		Targeted content distribution is supported
+	BIOS Revision: 3.1
+
+Handle 0x0100, DMI type 1, 27 bytes
+System Information
+	Manufacturer: Red Hat
+	Product Name: HVM domU
+	Version: 3.1.2-238.el5
+	Serial Number: 5ad07c4a-6de5-e601-46f2-afc24984a3c0
+	UUID: 5AD07C4A-6DE5-E601-46F2-AFC24984A3C0
+	Wake-up Type: Power Switch
+	SKU Number: Not Specified
+	Family: Red Hat Enterprise Linux
+
+Handle 0x0300, DMI type 3, 13 bytes
+Chassis Information
+	Manufacturer: Red Hat
+	Type: Other
+	Lock: Not Present
+	Version: Not Specified
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Boot-up State: Safe
+	Power Supply State: Safe
+	Thermal State: Safe
+	Security Status: Unknown
+
+Handle 0x0401, DMI type 4, 26 bytes
+Processor Information
+	Socket Designation: CPU 1
+	Type: Central Processor
+	Family: Other
+	Manufacturer: Intel
+	ID: F6 06 00 00 FF FB A9 8F
+	Version: Not Specified
+	Voltage: Unknown
+	External Clock: Unknown
+	Max Speed: 2000 MHz
+	Current Speed: 2000 MHz
+	Status: Populated, Enabled
+	Upgrade: Other
+
+Handle 0x1000, DMI type 16, 15 bytes
+Physical Memory Array
+	Location: Other
+	Use: System Memory
+	Error Correction Type: Multi-bit ECC
+	Maximum Capacity: 768 MB
+	Error Information Handle: Not Provided
+	Number Of Devices: 1
+
+Handle 0x1100, DMI type 17, 21 bytes
+Memory Device
+	Array Handle: 0x1000
+	Error Information Handle: 0x0000
+	Total Width: 64 bits
+	Data Width: 64 bits
+	Size: 768 MB
+	Form Factor: DIMM
+	Set: None
+	Locator: DIMM 1
+	Bank Locator: Not Specified
+	Type: RAM
+	Type Detail: None
+
+Handle 0x1300, DMI type 19, 15 bytes
+Memory Array Mapped Address
+	Starting Address: 0x00000000000
+	Ending Address: 0x0002FF003FF
+	Range Size: 785409 kB
+	Physical Array Handle: 0x1000
+	Partition Width: 0
+
+Handle 0x1400, DMI type 20, 19 bytes
+Memory Device Mapped Address
+	Starting Address: 0x00000000000
+	Ending Address: 0x0002FF003FF
+	Range Size: 785409 kB
+	Physical Device Handle: 0x1100
+	Memory Array Mapped Address Handle: 0x1300
+	Partition Row Position: 1
+
+Handle 0x2000, DMI type 32, 11 bytes
+System Boot Information
+	Status: No errors detected
+
+Handle 0x7F00, DMI type 127, 4 bytes
+End Of Table
+
+EOF
