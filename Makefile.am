@@ -38,10 +38,16 @@ EXTRA_DIST = \
 	tests/qemu/sbin/dmidecode \
 	tests/qemu/sbin/id \
 	tests/qemu/sbin/virt-what-cpuid-helper \
+	tests/rhel5-xen-dom0/proc/cpuinfo \
+	tests/rhel5-xen-dom0/proc/self/status \
+	tests/rhel5-xen-dom0/sbin/dmidecode \
+	tests/rhel5-xen-dom0/sbin/id \
+	tests/rhel5-xen-dom0/sbin/virt-what-cpuid-helper \
 	tests/test-baremetal.sh \
 	tests/test-esx4.1.sh \
 	tests/test-kvm.sh \
-	tests/test-qemu.sh
+	tests/test-qemu.sh \
+	tests/test-rhel5-xen-dom0.sh
 
 CLEANFILES = virt-what.1 virt-what.txt
 
@@ -63,7 +69,7 @@ TESTS = \
 	tests/test-baremetal.sh \
 	tests/test-esx4.1.sh \
 	tests/test-kvm.sh \
-	tests/test-qemu.sh
+	tests/test-qemu.sh \
+	tests/test-rhel5-xen-dom0.sh
 # tests/test-virtualbox.sh \
-# tests/test-xen-dom0.sh \
 # tests/test-xen-domU.sh
