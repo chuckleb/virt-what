@@ -31,6 +31,12 @@ This is Hyper-V.
 
 Status: from MSDN description, not tested.
 
+=item B<linux_vserver>
+
+This process is running in a Linux VServer container.
+
+Status: contributed by Barış Metin
+
 =item B<kvm>
 
 This is KVM.

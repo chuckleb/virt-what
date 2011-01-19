@@ -121,6 +121,11 @@ if [ -d $root/proc/vz -a ! -d $root/proc/bc ]; then
     echo openvz
 fi
 
+# Check for Linux-VServer
+if cat $root/proc/self/status | grep -q "VxID: [0-9]*"; then
+    echo linux_vserver
+fi
+
 # Check for UML.
 # Added by Laurent Léonard.
 if grep -q 'UML' $root/proc/cpuinfo; then
