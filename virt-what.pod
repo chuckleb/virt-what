@@ -52,7 +52,10 @@ Status: data supplied by Jeffrey Scheel, not confirmed
 
 =item B<qemu>
 
-This is QEMU.
+This is QEMU using software emulation.
+
+Note that for KVM (hardware accelerated) guests you should I<not> see
+this.
 
 Status: confirmed by RWMJ.
 
