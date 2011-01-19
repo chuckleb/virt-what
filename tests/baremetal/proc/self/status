@@ -1,0 +1,39 @@
+Name:	cp
+State:	R (running)
+Tgid:	32449
+Pid:	32449
+PPid:	26492
+TracerPid:	0
+Uid:	500	500	500	500
+Gid:	500	500	500	500
+Utrace:	0
+FDSize:	256
+Groups:	10 500 
+VmPeak:	  113756 kB
+VmSize:	  113756 kB
+VmLck:	       0 kB
+VmHWM:	     848 kB
+VmRSS:	     848 kB
+VmData:	     208 kB
+VmStk:	     136 kB
+VmExe:	     112 kB
+VmLib:	    2060 kB
+VmPTE:	      92 kB
+VmSwap:	       0 kB
+Threads:	1
+SigQ:	0/29792
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000000000
+SigCgt:	0000000180000000
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	ffffffffffffffff
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	1
+nonvoluntary_ctxt_switches:	5

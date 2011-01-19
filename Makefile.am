@@ -19,18 +19,22 @@ EXTRA_DIST = \
 	virt-what.in \
 	virt-what.pod \
 	tests/baremetal/proc/cpuinfo \
+	tests/baremetal/proc/self/status \
 	tests/baremetal/sbin/dmidecode \
 	tests/baremetal/sbin/id \
 	tests/baremetal/sbin/virt-what-cpuid-helper \
 	tests/esx4.1/proc/cpuinfo \
+	tests/esx4.1/proc/self/status \
 	tests/esx4.1/sbin/dmidecode \
 	tests/esx4.1/sbin/id \
 	tests/esx4.1/sbin/virt-what-cpuid-helper \
 	tests/kvm/proc/cpuinfo \
+	tests/kvm/proc/self/status \
 	tests/kvm/sbin/dmidecode \
 	tests/kvm/sbin/id \
 	tests/kvm/sbin/virt-what-cpuid-helper \
 	tests/qemu/proc/cpuinfo \
+	tests/qemu/proc/self/status \
 	tests/qemu/sbin/dmidecode \
 	tests/qemu/sbin/id \
 	tests/qemu/sbin/virt-what-cpuid-helper \
