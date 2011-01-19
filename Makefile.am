@@ -33,6 +33,11 @@ EXTRA_DIST = \
 	tests/kvm/sbin/dmidecode \
 	tests/kvm/sbin/id \
 	tests/kvm/sbin/virt-what-cpuid-helper \
+	tests/linux-vserver/proc/cpuinfo \
+	tests/linux-vserver/proc/self/status \
+	tests/linux-vserver/sbin/dmidecode \
+	tests/linux-vserver/sbin/id \
+	tests/linux-vserver/sbin/virt-what-cpuid-helper \
 	tests/qemu/proc/cpuinfo \
 	tests/qemu/proc/self/status \
 	tests/qemu/sbin/dmidecode \
@@ -51,6 +56,7 @@ EXTRA_DIST = \
 	tests/test-baremetal.sh \
 	tests/test-esx4.1.sh \
 	tests/test-kvm.sh \
+	tests/test-linux-vserver.sh \
 	tests/test-qemu.sh \
 	tests/test-rhel5-xen-dom0.sh \
 	tests/test-rhel5-xen-domU-pv.sh
@@ -75,6 +81,7 @@ TESTS = \
 	tests/test-baremetal.sh \
 	tests/test-esx4.1.sh \
 	tests/test-kvm.sh \
+	tests/test-linux-vserver.sh \
 	tests/test-qemu.sh \
 	tests/test-rhel5-xen-dom0.sh \
 	tests/test-rhel5-xen-domU-pv.sh
