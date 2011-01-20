@@ -1,0 +1,3 @@
+#!/bin/sh -
+# dmidecode is not available on Fedora on s/390
+exit 1

@@ -143,6 +143,12 @@ if echo "$dmi" | grep -q 'Manufacturer.*HITACHI' &&
     echo virtage
 fi
 
+# Check for IBM SystemZ (z/VM, not tested whether this applies to Linux
+# installed directly into an LPAR, we may need a separate test).
+if grep -q '^vendor_id.*IBM/S390' $root/proc/cpuinfo; then
+    echo zvm
+fi
+
 # Check for Xen.
 
 if [ "$cpuid" = "XenVMMXenVMM" ]; then

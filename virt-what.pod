@@ -119,6 +119,14 @@ This is a Xen guest fully virtualized (HVM).
 
 Status: confirmed by RWMJ
 
+=item B<zvm>
+
+This is a z/VM guest running on an IBM SystemZ mainframe.
+
+Status: confirmed by RWMJ using a Fedora guest running in z/VM.  Not
+tested whether this also works for Linux installed directly in an
+LPAR.
+
 =back
 
 =head1 IMPORTANT NOTE
