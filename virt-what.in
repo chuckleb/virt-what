@@ -171,11 +171,12 @@ elif [ -f $root/proc/xen/capabilities ]; then
         echo xen-domU
     fi
     is_xen=1
-elif [ -d $root/proc/xen ]; then
-    # This directory can be present when Xen paravirt drivers are
-    # installed, even on baremetal.  Don't confuse people by
-    # printing anything.
-    :
+elif [ -f $root/sys/hypervisor/type ] &&
+    grep -q "xen" $root/sys/hypervisor/type; then
+    # Ordinary kernel with pv_ops.  There does not seem to be
+    # enough information at present to tell whether this is dom0
+    # or domU.  XXX
+    echo xen
 fi
 
 # Check for QEMU/KVM.
