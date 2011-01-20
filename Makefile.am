@@ -54,6 +54,20 @@ EXTRA_DIST = \
 	tests/rhel5-xen-dom0/sbin/dmidecode \
 	tests/rhel5-xen-dom0/sbin/id \
 	tests/rhel5-xen-dom0/sbin/virt-what-cpuid-helper \
+	tests/rhel5-xen-dom0/sys/hypervisor/properties/pagesize \
+	tests/rhel5-xen-dom0/sys/hypervisor/properties/changeset \
+	tests/rhel5-xen-dom0/sys/hypervisor/properties/virtual_start \
+	tests/rhel5-xen-dom0/sys/hypervisor/properties/capabilities \
+	tests/rhel5-xen-dom0/sys/hypervisor/properties/writable_pt \
+	tests/rhel5-xen-dom0/sys/hypervisor/type \
+	tests/rhel5-xen-dom0/sys/hypervisor/vmcoreinfo \
+	tests/rhel5-xen-dom0/sys/hypervisor/version/minor \
+	tests/rhel5-xen-dom0/sys/hypervisor/version/major \
+	tests/rhel5-xen-dom0/sys/hypervisor/version/extra \
+	tests/rhel5-xen-dom0/sys/hypervisor/compilation/compiler \
+	tests/rhel5-xen-dom0/sys/hypervisor/compilation/compiled_by \
+	tests/rhel5-xen-dom0/sys/hypervisor/compilation/compile_date \
+	tests/rhel5-xen-dom0/sys/hypervisor/uuid \
 	tests/rhel5-xen-domU-hvm/proc/cpuinfo \
 	tests/rhel5-xen-domU-hvm/proc/self/status \
 	tests/rhel5-xen-domU-hvm/sbin/dmidecode \
