@@ -19,7 +19,8 @@
 root=tests/zvm
 
 output="$(./virt-what --test-root=$root 2>&1)"
-expected="zvm"
+expected="ibm_systemz
+ibm_systemz-zvm"
 
 if [ "$output" != "$expected" ]; then
     echo "$0: test failed because output did not match expected"

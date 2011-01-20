@@ -31,6 +31,32 @@ This is Hyper-V.
 
 Status: from MSDN description, not tested.
 
+=item B<ibm_systemz>
+
+This is an IBM SystemZ (or other S/390) mainframe.  Additional
+facts listed below may also be printed.
+
+=item B<ibm_systemz-direct>
+
+This is Linux running directly on a IBM SystemZ mainframe.
+
+This is expected to be a highly unusual configuration - if
+you see this result you should treat it with suspicion.
+
+Status: not confirmed
+
+=item B<ibm_systemz-lpar>
+
+This is Linux running directly on an LPAR on an IBM SystemZ mainframe.
+
+Status: not confirmed
+
+=item B<ibm_systemz-zvm>
+
+This is a z/VM guest running in an LPAR on an IBM SystemZ mainframe.
+
+Status: confirmed by RWMJ using a Fedora guest running in z/VM
+
 =item B<linux_vserver>
 
 This process is running in a Linux VServer container.
@@ -118,14 +144,6 @@ Status: confirmed by RWMJ
 This is a Xen guest fully virtualized (HVM).
 
 Status: confirmed by RWMJ
-
-=item B<zvm>
-
-This is a z/VM guest running on an IBM SystemZ mainframe.
-
-Status: confirmed by RWMJ using a Fedora guest running in z/VM.  Not
-tested whether this also works for Linux installed directly in an
-LPAR.
 
 =back
 
