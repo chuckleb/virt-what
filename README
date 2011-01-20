@@ -10,17 +10,24 @@ developers and people compiling from source.
 Compiling and installing
 ----------------------------------------------------------------------
 
-Build:
+Build from a tarball:
 
   ./configure
   make
 
-If you want to run the automated tests:
+Build from git (http://git.annexia.org/?p=virt-what.git;a=summary):
+
+  autoreconf -i
+  autoconf
+  ./configure
+  make
+
+Run the automated regression tests:
 
   make check
 
-If you want to run it from the local directory, then you have to set
-the PATH:
+If you want to run it from the local directory (without needing to
+install), then you have to set the PATH:
 
   PATH=.:$PATH virt-what
 
