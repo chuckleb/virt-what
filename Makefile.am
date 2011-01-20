@@ -84,6 +84,7 @@ EXTRA_DIST = \
 	tests/rhel5-xen-domU-pv/sys/hypervisor/uuid \
 	tests/zvm/proc/cpuinfo \
 	tests/zvm/proc/self/status \
+	tests/zvm/proc/sysinfo \
 	tests/zvm/sbin/dmidecode \
 	tests/zvm/sbin/id \
 	tests/zvm/sbin/virt-what-cpuid-helper \
