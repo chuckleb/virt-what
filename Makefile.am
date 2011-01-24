@@ -118,7 +118,7 @@ EXTRA_DIST = \
 	tests/test-rhel5-xen-domU-pv.sh \
 	tests/test-zvm.sh
 
-CLEANFILES = virt-what.1 virt-what.txt
+CLEANFILES = virt-what virt-what.1 virt-what.txt
 
 AM_CPPFLAGS = -Wall
 
