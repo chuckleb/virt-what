@@ -1,0 +1,3 @@
+#!/bin/sh -
+# It's unknown why Parallels reports itself as KVM.
+echo KVMKVMKVM

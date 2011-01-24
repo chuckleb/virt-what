@@ -1,0 +1,19 @@
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 23
+model name	: Intel(R) Core(TM)2 Extreme CPU X9650  @ 3.00GHz
+stepping	: 7
+cpu MHz		: 3434.878
+cache size	: 6144 KB
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 10
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx lm constant_tsc up arch_perfmon rep_good aperfmperf pni ssse3 cx16 sse4_1 x2apic hypervisor lahf_lm
+bogomips	: 6869.75
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
