@@ -76,6 +76,13 @@ container.
 
 Status: contributed by Evgeniy Sokolov
 
+=item B<parallels>
+
+The guest is running inside Parallels Virtual Platform
+(Parallels Desktop, Parallels Server).
+
+Status: contributed by Justin Clift
+
 =item B<powervm_lx86>
 
 The guest is running inside IBM PowerVM Lx86 Linux/x86 emulator.

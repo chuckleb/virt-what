@@ -158,6 +158,11 @@ if grep -q '^vendor_id.*IBM/S390' $root/proc/cpuinfo; then
     fi
 fi
 
+# Check for Parallels.
+if echo "$dmi" | grep -q 'Vendor: Parallels'; then
+    echo parallels
+fi
+
 # Check for Xen.
 
 if [ "$cpuid" = "XenVMMXenVMM" ]; then
