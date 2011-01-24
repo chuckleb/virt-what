@@ -24,40 +24,60 @@
 #include <string.h>
 
 #if defined(__i386__) || defined(__x86_64__)
-void
-cpu_sig (char *sig)
+
+static unsigned int
+cpuid (unsigned int eax, char *sig)
 {
-  unsigned int eax = 0x40000000;
-  unsigned int *sig32 = (unsigned int *)sig;
+  unsigned int *sig32 = (unsigned int *) sig;
+
   asm volatile (
         "xor %%ebx, %%ebx; cpuid"
         : "=a" (eax), "=b" (sig32[0]), "=c" (sig32[1]), "=d" (sig32[2])
         : "0" (eax));
   sig[12] = 0;
+
+  return eax;
 }
-#else
-void
-cpu_sig (char *sig)
+
+static void
+cpu_sig (void)
+{
+  char sig[13];
+  unsigned int base = 0x40000000, leaf = base;
+  unsigned int max_entries;
+
+  memset (sig, 0, sizeof sig);
+  max_entries = cpuid (leaf, sig);
+  puts (sig);
+
+  /* Most hypervisors only have information in leaf 0x40000000, but
+   * upstream Xen contains further leaf entries (in particular when
+   * used with Viridian [HyperV] extensions).  CPUID is supposed to
+   * return the maximum leaf offset in %eax, so that's what we use,
+   * but only if it looks sensible.
+   */
+  if (max_entries > 3 && max_entries < 0x10000) {
+    for (leaf = base + 0x100; leaf <= base + max_entries; leaf += 0x100) {
+      memset (sig, 0, sizeof sig);
+      cpuid (leaf, sig);
+      puts (sig);
+    }
+  }
+}
+
+#else /* !i386, !x86_64 */
+
+static void
+cpu_sig (void)
 {
   /* nothing for other architectures */
 }
+
 #endif
 
 int
 main()
 {
-  char sig[13];
-
-  memset (sig, 0, sizeof sig);
-
-  cpu_sig (sig);
-
-  puts (sig);
-  /* Possible values:
-   * KVMKVMKVM     KVM guest
-   * XenVMMXenVMM  Xen HVM guest
-   * VMwareVMware  VMware guest
-   */
-
+  cpu_sig ();
   return 0;
 }
