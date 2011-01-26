@@ -29,7 +29,7 @@ don't know about or cannot detect.
 
 This is Hyper-V.
 
-Status: from MSDN description, not tested.
+Status: confirmed by RWMJ
 
 =item B<ibm_systemz>
 
