@@ -1,4 +1,5 @@
 # Test for Parallels Desktop (data contributed by Justin Clift).
+# Data taken from Fedora 14 guest running in Parallels on a Mac Mini.
 # Copyright (C) 2008-2011 Red Hat Inc.
 #
 # This program is free software; you can redistribute it and/or modify

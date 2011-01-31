@@ -1,8 +1,8 @@
 Name:	cat
 State:	R (running)
-Tgid:	3278
-Pid:	3278
-PPid:	3235
+Tgid:	3437
+Pid:	3437
+PPid:	3370
 TracerPid:	0
 Uid:	0	0	0	0
 Gid:	0	0	0	0
@@ -21,7 +21,7 @@ VmLib:	    1772 kB
 VmPTE:	      48 kB
 VmSwap:	       0 kB
 Threads:	1
-SigQ:	0/7851
+SigQ:	0/3797
 SigPnd:	0000000000000000
 ShdPnd:	0000000000000000
 SigBlk:	0000000000000000

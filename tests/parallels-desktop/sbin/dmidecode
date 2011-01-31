@@ -31,8 +31,8 @@ System Information
 	Manufacturer: Parallels Software International Inc.
 	Product Name: Parallels Virtual Platform
 	Version: None
-	Serial Number: Parallels-E0 53 44 86 B1 45 41 31 8F 40 65 7A AF AD BE A1
-	UUID: E0534486-B145-4131-8F40-657AAFADBEA1
+	Serial Number: Parallels-1C 6B FF 34 0F 96 46 DF A0 F6 60 D1 53 56 B8 5A
+	UUID: 1C6BFF34-0F96-46DF-A0F6-60D15356B85A
 	Wake-up Type: Power Switch
 
 Handle 0x0002, DMI type 2, 8 bytes
@@ -62,12 +62,12 @@ Processor Information
 	Type: Central Processor
 	Family: Unknown
 	Manufacturer: GenuineIntel
-	ID: 77 06 01 00 FF FB EB BF
+	ID: 7A 06 01 00 FF FB EB BF
 	Version: Not Specified
 	Voltage: 3.3 V
-	External Clock: 572 MHz
-	Max Speed: 3435 MHz
-	Current Speed: 3435 MHz
+	External Clock: 400 MHz
+	Max Speed: 2400 MHz
+	Current Speed: 2400 MHz
 	Status: Populated, Enabled
 	Upgrade: Other
 	L1 Cache Handle: Not Provided
@@ -161,7 +161,7 @@ Memory Device
 	Error Information Handle: Not Provided
 	Total Width: 32 bits
 	Data Width: 32 bits
-	Size: 1024 MB
+	Size: 512 MB
 	Form Factor: DIMM
 	Set: None
 	Locator: DIMM #0
@@ -234,8 +234,8 @@ Memory Device
 Handle 0x0011, DMI type 19, 15 bytes
 Memory Array Mapped Address
 	Starting Address: 0x00000000000
-	Ending Address: 0x0003FFFFFFF
-	Range Size: 1 GB
+	Ending Address: 0x0001FFFFFFF
+	Range Size: 512 MB
 	Physical Array Handle: 0x000C
 	Partition Width: 2
 
