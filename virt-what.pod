@@ -27,18 +27,19 @@ don't know about or cannot detect.
 
 =item B<hyperv>
 
-This is Hyper-V.
+This is Microsoft Hyper-V hypervisor.
 
 Status: confirmed by RWMJ
 
 =item B<ibm_systemz>
 
-This is an IBM SystemZ (or other S/390) mainframe.  Additional
-facts listed below may also be printed.
+This is an IBM SystemZ (or other S/390) hardware partitioning system.
+Additional facts listed below may also be printed.
 
 =item B<ibm_systemz-direct>
 
-This is Linux running directly on a IBM SystemZ mainframe.
+This is Linux running directly on a IBM SystemZ hardware partitioning
+system.
 
 This is expected to be a highly unusual configuration - if
 you see this result you should treat it with suspicion.
@@ -47,13 +48,15 @@ Status: not confirmed
 
 =item B<ibm_systemz-lpar>
 
-This is Linux running directly on an LPAR on an IBM SystemZ mainframe.
+This is Linux running directly on an LPAR on an IBM SystemZ
+hardware partitioning system.
 
 Status: not confirmed
 
 =item B<ibm_systemz-zvm>
 
-This is a z/VM guest running in an LPAR on an IBM SystemZ mainframe.
+This is a z/VM guest running in an LPAR on an IBM SystemZ
+hardware partitioning system.
 
 Status: confirmed by RWMJ using a Fedora guest running in z/VM
 
@@ -65,7 +68,12 @@ Status: contributed by Barış Metin
 
 =item B<kvm>
 
-This is KVM.
+This guest is running on the KVM hypervisor using hardware
+acceleration.
+
+Note that if the hypervisor is using software acceleration
+you should I<not> see this, but should see the C<qemu> fact
+instead.
 
 Status: confirmed by RWMJ.
 
@@ -91,7 +99,7 @@ Status: data supplied by Jeffrey Scheel, not confirmed
 
 =item B<qemu>
 
-This is QEMU using software emulation.
+This is QEMU hypervisor using software emulation.
 
 Note that for KVM (hardware accelerated) guests you should I<not> see
 this.
@@ -106,7 +114,8 @@ Status: contributed by Laurent Léonard
 
 =item B<virtage>
 
-This is Hitachi Virtualization Manager (HVM) Virtage logical partitioning.
+This is Hitachi Virtualization Manager (HVM) Virtage
+hardware partitioning system.
 
 Status: data supplied by Bhavna Sarathy, not confirmed
 
@@ -124,13 +133,13 @@ Status: not confirmed
 
 =item B<vmware>
 
-The guest appears to be running on VMware.
+The guest appears to be running on VMware hypervisor.
 
 Status: confirmed by RWMJ
 
 =item B<xen>
 
-The guest appears to be running on Xen.
+The guest appears to be running on Xen hypervisor.
 
 Status: confirmed by RWMJ
 
