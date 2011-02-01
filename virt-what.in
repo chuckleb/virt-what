@@ -81,6 +81,9 @@ fi
 cpuid=`virt-what-cpuid-helper`
 
 # Check for various products in the BIOS information.
+# Note that dmidecode doesn't exist on non-PC architectures.  On these,
+# this will return an error which is ignored (error message redirected
+# into $dmi variable).
 
 dmi=`LANG=C dmidecode 2>&1`
 
