@@ -163,6 +163,22 @@ Status: confirmed by RWMJ
 
 =back
 
+=head1 EXIT STATUS
+
+Programs that use or wrap C<virt-what> should check that the exit
+status is 0 before they attempt to parse the output of the command.
+
+A non-zero exit status indicates some error, for example, an
+unrecognized command line argument.  If the exit status is non-zero
+then the output "facts" (if any were printed) cannot be guaranteed and
+should be ignored.
+
+The exit status does I<not> have anything to do with whether the
+program is running on baremetal or under virtualization, nor with
+whether C<virt-what> managed detection "correctly" (which is basically
+unknowable given the large variety of virtualization systems out there
+and that some systems deliberately emulate others).
+
 =head1 IMPORTANT NOTE
 
 Most of the time, using this program is the I<wrong> thing to do.
