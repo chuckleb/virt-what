@@ -179,6 +179,24 @@ whether C<virt-what> managed detection "correctly" (which is basically
 unknowable given the large variety of virtualization systems out there
 and that some systems deliberately emulate others).
 
+=head1 RUNNING VIRT-WHAT FROM OTHER PROGRAMS
+
+C<virt-what> is designed so that you can easily run it from
+other programs or wrap it up in a library.
+
+Your program should check the exit status (see the section above).
+
+Some programming languages (notably Python: issue 1652) erroneously
+mask the C<SIGPIPE> signal and do not restore it when executing
+subprocesses.  C<virt-what> is a shell script and some shell commands
+do not work correctly when you do this.  You may see warnings from
+C<virt-what> similar to this:
+
+ echo: write error: Broken pipe
+
+The solution is to set the C<SIGPIPE> signal handler back to C<SIG_DFL>
+before running C<virt-what>.
+
 =head1 IMPORTANT NOTE
 
 Most of the time, using this program is the I<wrong> thing to do.
