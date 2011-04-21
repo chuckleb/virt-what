@@ -1,0 +1,5 @@
+#!/bin/sh -
+cat <<'EOF'
+# dmidecode 2.7
+# No SMBIOS nor DMI entry point found, sorry.
+EOF

@@ -43,6 +43,11 @@ EXTRA_DIST = \
 	tests/linux-vserver/sbin/dmidecode \
 	tests/linux-vserver/sbin/id \
 	tests/linux-vserver/sbin/virt-what-cpuid-helper \
+	tests/lx86/proc/cpuinfo \
+	tests/lx86/proc/self/status \
+	tests/lx86/sbin/dmidecode \
+	tests/lx86/sbin/id \
+	tests/lx86/sbin/virt-what-cpuid-helper \
 	tests/parallels-desktop/proc/cpuinfo \
 	tests/parallels-desktop/proc/self/status \
 	tests/parallels-desktop/sbin/dmidecode \
@@ -117,6 +122,7 @@ EXTRA_DIST = \
 	tests/test-hyperv.sh \
 	tests/test-kvm.sh \
 	tests/test-linux-vserver.sh \
+	tests/test-lx86.sh \
 	tests/test-parallels-desktop.sh \
 	tests/test-qemu.sh \
 	tests/test-rhel5-xen-dom0.sh \
@@ -146,6 +152,7 @@ TESTS = \
 	tests/test-hyperv.sh \
 	tests/test-kvm.sh \
 	tests/test-linux-vserver.sh \
+	tests/test-lx86.sh \
 	tests/test-parallels-desktop.sh \
 	tests/test-qemu.sh \
 	tests/test-rhel5-xen-dom0.sh \
