@@ -15,6 +15,36 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
+CLEANFILES = virt-what virt-what.1 virt-what.txt
+
+AM_CPPFLAGS = -Wall
+
+sbin_SCRIPTS = virt-what
+libexec_PROGRAMS = virt-what-cpuid-helper
+
+man_MANS = virt-what.1
+
+virt-what.1: virt-what.pod
+	pod2man -c "Virtualization Support" --release "$(PACKAGE)-$(VERSION)" \
+	  $< > $@
+
+virt-what.txt: virt-what.pod
+	pod2text $< > $@
+
+TESTS = \
+	tests/test-baremetal.sh \
+	tests/test-esx4.1.sh \
+	tests/test-hyperv.sh \
+	tests/test-kvm.sh \
+	tests/test-linux-vserver.sh \
+	tests/test-lx86.sh \
+	tests/test-parallels-desktop.sh \
+	tests/test-qemu.sh \
+	tests/test-rhel5-xen-dom0.sh \
+	tests/test-rhel5-xen-domU-hvm.sh \
+	tests/test-rhel5-xen-domU-pv.sh \
+	tests/test-zvm.sh
+
 EXTRA_DIST = \
 	virt-what.in \
 	virt-what.pod \
@@ -117,45 +147,4 @@ EXTRA_DIST = \
 	tests/zvm/sbin/dmidecode \
 	tests/zvm/sbin/id \
 	tests/zvm/sbin/virt-what-cpuid-helper \
-	tests/test-baremetal.sh \
-	tests/test-esx4.1.sh \
-	tests/test-hyperv.sh \
-	tests/test-kvm.sh \
-	tests/test-linux-vserver.sh \
-	tests/test-lx86.sh \
-	tests/test-parallels-desktop.sh \
-	tests/test-qemu.sh \
-	tests/test-rhel5-xen-dom0.sh \
-	tests/test-rhel5-xen-domU-hvm.sh \
-	tests/test-rhel5-xen-domU-pv.sh \
-	tests/test-zvm.sh
-
-CLEANFILES = virt-what virt-what.1 virt-what.txt
-
-AM_CPPFLAGS = -Wall
-
-sbin_SCRIPTS = virt-what
-libexec_PROGRAMS = virt-what-cpuid-helper
-
-man_MANS = virt-what.1
-
-virt-what.1: virt-what.pod
-	pod2man -c "Virtualization Support" --release "$(PACKAGE)-$(VERSION)" \
-	  $< > $@
-
-virt-what.txt: virt-what.pod
-	pod2text $< > $@
-
-TESTS = \
-	tests/test-baremetal.sh \
-	tests/test-esx4.1.sh \
-	tests/test-hyperv.sh \
-	tests/test-kvm.sh \
-	tests/test-linux-vserver.sh \
-	tests/test-lx86.sh \
-	tests/test-parallels-desktop.sh \
-	tests/test-qemu.sh \
-	tests/test-rhel5-xen-dom0.sh \
-	tests/test-rhel5-xen-domU-hvm.sh \
-	tests/test-rhel5-xen-domU-pv.sh \
-	tests/test-zvm.sh
+	$(TESTS)
