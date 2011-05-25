@@ -36,6 +36,7 @@ TESTS = \
 	tests/test-esx4.1.sh \
 	tests/test-hyperv.sh \
 	tests/test-kvm.sh \
+	tests/test-kvm-explicit-cpu.sh \
 	tests/test-linux-vserver.sh \
 	tests/test-lx86.sh \
 	tests/test-parallels-desktop.sh \
@@ -68,6 +69,11 @@ EXTRA_DIST = \
 	tests/kvm/sbin/dmidecode \
 	tests/kvm/sbin/id \
 	tests/kvm/sbin/virt-what-cpuid-helper \
+	tests/kvm-explicit-cpu/proc/cpuinfo \
+	tests/kvm-explicit-cpu/proc/self/status \
+	tests/kvm-explicit-cpu/sbin/dmidecode \
+	tests/kvm-explicit-cpu/sbin/id \
+	tests/kvm-explicit-cpu/sbin/virt-what-cpuid-helper \
 	tests/linux-vserver/proc/cpuinfo \
 	tests/linux-vserver/proc/self/status \
 	tests/linux-vserver/sbin/dmidecode \
