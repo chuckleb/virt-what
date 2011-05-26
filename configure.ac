@@ -28,6 +28,10 @@ test "x$U" != "x" && AC_MSG_ERROR([Compiler not ANSI compliant])
 
 AM_PROG_CC_C_O
 
+dnl Architecture we are compiling for.
+AC_CANONICAL_HOST
+AM_CONDITIONAL([HOST_CPU_IA64], [ test "x$host_cpu" = "xia64" ])
+
 dnl Produce output files.
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([virt-what],[chmod +x virt-what])

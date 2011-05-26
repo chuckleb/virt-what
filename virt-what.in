@@ -87,6 +87,11 @@ cpuid=`virt-what-cpuid-helper`
 
 dmi=`LANG=C dmidecode 2>&1`
 
+# Architecture.
+# Note for the purpose of testing, we only call uname with -p option.
+
+arch=`uname -p`
+
 # Check for VMware.
 # cpuid check added by Chetan Loke.
 
@@ -188,6 +193,22 @@ elif [ -f $root/sys/hypervisor/type ] &&
     # enough information at present to tell whether this is dom0
     # or domU.  XXX
     echo xen
+elif [ "$arch" = "ia64" ]; then
+    if [ -d $root/sys/bus/xen -a ! -d $root/sys/bus/xen-backend ]; then
+        # PV-on-HVM drivers installed in a Xen guest.
+        echo xen
+        echo xen-domU
+    else
+        # There is no virt leaf on IA64 HVM.  This is a last-ditch
+        # attempt to detect something is virtualized by using a
+        # timing attack.
+        virt-what-ia64-xen-rdtsc-test > /dev/null 2>&1
+        case "$?" in
+            0) ;; # not virtual
+            1) # Could be some sort of virt, or could just be a bit slow.
+                echo virt
+        esac
+    fi
 fi
 
 # Check for QEMU/KVM.

@@ -113,6 +113,15 @@ This is a User-Mode Linux (UML) guest.
 
 Status: contributed by Laurent Léonard
 
+=item B<virt>
+
+Some sort of virtualization appears to be present, but we are not sure
+what it is.  In some very rare corner cases where we know that
+virtualization is hard to detect, we will try a timing attack to see
+if certain machine instructions are running much more slowly than they
+should be, which would indicate virtualization.  In this case, the
+generic fact C<virt> is printed.
+
 =item B<virtage>
 
 This is Hitachi Virtualization Manager (HVM) Virtage
