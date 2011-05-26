@@ -1,0 +1,4 @@
+#!/bin/sh -
+echo '# dmidecode 2.11'
+echo '/sys/firmware/efi/systab: SMBIOS entry point missing' >&2
+exit 1

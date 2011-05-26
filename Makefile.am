@@ -46,6 +46,7 @@ TESTS = \
 	tests/test-qemu.sh \
 	tests/test-rhel5-xen-dom0.sh \
 	tests/test-rhel5-xen-domU-hvm.sh \
+	tests/test-rhel5-xen-domU-hvm-ia64.sh \
 	tests/test-rhel5-xen-domU-pv.sh \
 	tests/test-zvm.sh
 
@@ -138,6 +139,17 @@ EXTRA_DIST = \
 	tests/rhel5-xen-domU-hvm/sbin/id \
 	tests/rhel5-xen-domU-hvm/sbin/uname \
 	tests/rhel5-xen-domU-hvm/sbin/virt-what-cpuid-helper \
+	tests/rhel5-xen-domU-hvm-ia64/proc/cpuinfo \
+	tests/rhel5-xen-domU-hvm-ia64/proc/self/status \
+	tests/rhel5-xen-domU-hvm-ia64/sbin/dmidecode \
+	tests/rhel5-xen-domU-hvm-ia64/sbin/id \
+	tests/rhel5-xen-domU-hvm-ia64/sbin/uname \
+	tests/rhel5-xen-domU-hvm-ia64/sbin/virt-what-cpuid-helper \
+	tests/rhel5-xen-domU-hvm-ia64/sys/bus/xen/drivers/vbd/bind \
+	tests/rhel5-xen-domU-hvm-ia64/sys/bus/xen/drivers/vbd/unbind \
+	tests/rhel5-xen-domU-hvm-ia64/sys/bus/xen/drivers/vif/bind \
+	tests/rhel5-xen-domU-hvm-ia64/sys/bus/xen/drivers/vif/unbind \
+	tests/rhel5-xen-domU-hvm-ia64/sys/bus/xen/drivers_probe \
 	tests/rhel5-xen-domU-pv/proc/cpuinfo \
 	tests/rhel5-xen-domU-pv/proc/self/status \
 	tests/rhel5-xen-domU-pv/proc/xen/balloon \
