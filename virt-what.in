@@ -197,7 +197,7 @@ elif [ "$arch" = "ia64" ]; then
     if [ -d $root/sys/bus/xen -a ! -d $root/sys/bus/xen-backend ]; then
         # PV-on-HVM drivers installed in a Xen guest.
         echo xen
-        echo xen-domU
+        echo xen-hvm
     else
         # There is no virt leaf on IA64 HVM.  This is a last-ditch
         # attempt to detect something is virtualized by using a

@@ -19,7 +19,7 @@ root=tests/rhel5-xen-domU-hvm-ia64
 
 output="$(./virt-what --test-root=$root 2>&1)"
 expected="xen
-xen-domU"
+xen-hvm"
 
 if [ "$output" != "$expected" ]; then
     echo "$0: test failed because output did not match expected"
