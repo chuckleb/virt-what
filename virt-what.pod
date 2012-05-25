@@ -229,6 +229,13 @@ tool.
 
 You might include this information in status and monitoring programs.
 
+=item System tuning (sometimes)
+
+You might use this program to tune an operating system so it runs
+better as a virtual machine of a particular hypervisor.  However if
+installing paravirtualized drivers, it's better to check for the
+specific features your drivers need (eg. for the presence of PCI devices).
+
 =back
 
 =head1 SEE ALSO
