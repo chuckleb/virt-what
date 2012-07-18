@@ -43,7 +43,7 @@ function usage {
 
 # Handle the command line arguments, if any.
 
-TEMP=`getopt -o v --long help --long version --long test-root: -n 'virt-what' -- "$@"`
+TEMP=$(getopt -o v --long help --long version --long test-root: -n 'virt-what' -- "$@")
 if [ $? != 0 ]; then exit 1; fi
 eval set -- "$TEMP"
 
@@ -78,19 +78,19 @@ fi
 # Many fullvirt hypervisors give an indication through CPUID.  Use the
 # helper program to get this information.
 
-cpuid=`virt-what-cpuid-helper`
+cpuid=$(virt-what-cpuid-helper)
 
 # Check for various products in the BIOS information.
 # Note that dmidecode doesn't exist on non-PC architectures.  On these,
 # this will return an error which is ignored (error message redirected
 # into $dmi variable).
 
-dmi=`LANG=C dmidecode 2>&1`
+dmi=$(LANG=C dmidecode 2>&1)
 
 # Architecture.
 # Note for the purpose of testing, we only call uname with -p option.
 
-arch=`uname -p`
+arch=$(uname -p)
 
 # Check for VMware.
 # cpuid check added by Chetan Loke.
