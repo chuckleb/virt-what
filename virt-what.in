@@ -26,6 +26,11 @@
 # The following resources were useful in writing this script:
 # . http://www.dmo.ca/blog/20080530151107
 
+# Do not allow unset variables, and set defaults.
+set -u
+root=''
+skip_qemu_kvm=false
+
 VERSION="@VERSION@"
 
 function fail {
@@ -171,14 +176,14 @@ fi
 # Check for Parallels.
 if echo "$dmi" | grep -q 'Vendor: Parallels'; then
     echo parallels
-    skip_qemu_kvm=1
+    skip_qemu_kvm=true
 fi
 
 # Check for Xen.
 
 if [ "$cpuid" = "XenVMMXenVMM" ]; then
     echo xen; echo xen-hvm
-    skip_qemu_kvm=1
+    skip_qemu_kvm=true
 elif [ -f $root/proc/xen/capabilities ]; then
     echo xen
     if grep -q "control_d" $root/proc/xen/capabilities; then
@@ -186,7 +191,7 @@ elif [ -f $root/proc/xen/capabilities ]; then
     else
         echo xen-domU
     fi
-    skip_qemu_kvm=1
+    skip_qemu_kvm=true
 elif [ -f $root/sys/hypervisor/type ] &&
     grep -q "xen" $root/sys/hypervisor/type; then
     # Ordinary kernel with pv_ops.  There does not seem to be
@@ -217,7 +222,7 @@ fi
 # seen that it's Parallels.  Xen uses QEMU as the device model, so
 # skip this test if we know it is Xen.
 
-if [ ! "$skip_qemu_kvm" ]; then
+if ! $skip_qemu_kvm; then
     if [ "$cpuid" = "KVMKVMKVM" ]; then
 	echo kvm
     else
