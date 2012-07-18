@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-CLEANFILES = virt-what virt-what.1 virt-what.txt
+CLEANFILES = virt-what
 
 AM_CPPFLAGS = -Wall
 
@@ -25,14 +25,18 @@ if HOST_CPU_IA64
 libexec_PROGRAMS += virt-what-ia64-xen-rdtsc-test
 endif
 
+if HAVE_POD2MAN
+
+CLEANFILES += virt-what.1 virt-what.txt
 man_MANS = virt-what.1
 
 virt-what.1: virt-what.pod
 	pod2man -c "Virtualization Support" --release "$(PACKAGE)-$(VERSION)" \
 	  $< > $@
-
 virt-what.txt: virt-what.pod
 	pod2text $< > $@
+
+endif
 
 TESTS = \
 	tests/test-baremetal.sh \
