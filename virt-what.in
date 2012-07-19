@@ -75,8 +75,7 @@ PATH=$root@libexecdir@:$root/sbin:$root/usr/sbin:$PATH
 
 # Check we're running as root.
 
-uid=`id -u`
-if [ "$uid" != 0 ]; then
+if [ "x$root" = "x" ] && [ "$EUID" -ne 0 ]; then
     fail "this script must be run as root"
 fi
 
