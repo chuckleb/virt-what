@@ -34,7 +34,7 @@ skip_qemu_kvm=false
 VERSION="@VERSION@"
 
 function fail {
-    echo "virt-what: $1"
+    echo "virt-what: $1" >&2
     exit 1
 }
 
