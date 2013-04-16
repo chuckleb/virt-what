@@ -61,62 +61,52 @@ EXTRA_DIST = \
 	tests/baremetal/proc/cpuinfo \
 	tests/baremetal/proc/self/status \
 	tests/baremetal/sbin/dmidecode \
-	tests/baremetal/sbin/id \
 	tests/baremetal/sbin/uname \
 	tests/baremetal/sbin/virt-what-cpuid-helper \
 	tests/esx4.1/proc/cpuinfo \
 	tests/esx4.1/proc/self/status \
 	tests/esx4.1/sbin/dmidecode \
-	tests/esx4.1/sbin/id \
 	tests/esx4.1/sbin/uname \
 	tests/esx4.1/sbin/virt-what-cpuid-helper \
 	tests/hyperv/proc/cpuinfo \
 	tests/hyperv/proc/self/status \
 	tests/hyperv/sbin/dmidecode \
-	tests/hyperv/sbin/id \
 	tests/hyperv/sbin/uname \
 	tests/hyperv/sbin/virt-what-cpuid-helper \
 	tests/kvm/proc/cpuinfo \
 	tests/kvm/proc/self/status \
 	tests/kvm/sbin/dmidecode \
-	tests/kvm/sbin/id \
 	tests/kvm/sbin/uname \
 	tests/kvm/sbin/virt-what-cpuid-helper \
 	tests/kvm-explicit-cpu/proc/cpuinfo \
 	tests/kvm-explicit-cpu/proc/self/status \
 	tests/kvm-explicit-cpu/sbin/dmidecode \
-	tests/kvm-explicit-cpu/sbin/id \
 	tests/kvm-explicit-cpu/sbin/uname \
 	tests/kvm-explicit-cpu/sbin/virt-what-cpuid-helper \
 	tests/linux-vserver/proc/cpuinfo \
 	tests/linux-vserver/proc/self/status \
 	tests/linux-vserver/sbin/dmidecode \
-	tests/linux-vserver/sbin/id \
 	tests/linux-vserver/sbin/uname \
 	tests/linux-vserver/sbin/virt-what-cpuid-helper \
 	tests/lxc/proc/1/environ \
 	tests/lxc/proc/cpuinfo \
 	tests/lxc/proc/self/status \
 	tests/lxc/sbin/dmidecode \
-	tests/lxc/sbin/id \
 	tests/lxc/sbin/uname \
 	tests/lxc/sbin/virt-what-cpuid-helper \
 	tests/lx86/proc/cpuinfo \
 	tests/lx86/proc/self/status \
 	tests/lx86/sbin/dmidecode \
-	tests/lx86/sbin/id \
 	tests/lx86/sbin/uname \
 	tests/lx86/sbin/virt-what-cpuid-helper \
 	tests/parallels-desktop/proc/cpuinfo \
 	tests/parallels-desktop/proc/self/status \
 	tests/parallels-desktop/sbin/dmidecode \
-	tests/parallels-desktop/sbin/id \
 	tests/parallels-desktop/sbin/uname \
 	tests/parallels-desktop/sbin/virt-what-cpuid-helper \
 	tests/qemu/proc/cpuinfo \
 	tests/qemu/proc/self/status \
 	tests/qemu/sbin/dmidecode \
-	tests/qemu/sbin/id \
 	tests/qemu/sbin/uname \
 	tests/qemu/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-dom0/proc/cpuinfo \
@@ -128,7 +118,6 @@ EXTRA_DIST = \
 	tests/rhel5-xen-dom0/proc/xen/xsd_kva \
 	tests/rhel5-xen-dom0/proc/xen/xsd_port \
 	tests/rhel5-xen-dom0/sbin/dmidecode \
-	tests/rhel5-xen-dom0/sbin/id \
 	tests/rhel5-xen-dom0/sbin/uname \
 	tests/rhel5-xen-dom0/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-dom0/sys/hypervisor/properties/pagesize \
@@ -148,13 +137,11 @@ EXTRA_DIST = \
 	tests/rhel5-xen-domU-hvm/proc/cpuinfo \
 	tests/rhel5-xen-domU-hvm/proc/self/status \
 	tests/rhel5-xen-domU-hvm/sbin/dmidecode \
-	tests/rhel5-xen-domU-hvm/sbin/id \
 	tests/rhel5-xen-domU-hvm/sbin/uname \
 	tests/rhel5-xen-domU-hvm/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-domU-hvm-ia64/proc/cpuinfo \
 	tests/rhel5-xen-domU-hvm-ia64/proc/self/status \
 	tests/rhel5-xen-domU-hvm-ia64/sbin/dmidecode \
-	tests/rhel5-xen-domU-hvm-ia64/sbin/id \
 	tests/rhel5-xen-domU-hvm-ia64/sbin/uname \
 	tests/rhel5-xen-domU-hvm-ia64/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-domU-hvm-ia64/sys/bus/xen/drivers/vbd/bind \
@@ -169,7 +156,6 @@ EXTRA_DIST = \
 	tests/rhel5-xen-domU-pv/proc/xen/privcmd \
 	tests/rhel5-xen-domU-pv/proc/xen/xenbus \
 	tests/rhel5-xen-domU-pv/sbin/dmidecode \
-	tests/rhel5-xen-domU-pv/sbin/id \
 	tests/rhel5-xen-domU-pv/sbin/uname \
 	tests/rhel5-xen-domU-pv/sbin/virt-what-cpuid-helper \
 	tests/rhel5-xen-domU-pv/sys/hypervisor/properties/pagesize \
@@ -190,7 +176,6 @@ EXTRA_DIST = \
 	tests/zvm/proc/self/status \
 	tests/zvm/proc/sysinfo \
 	tests/zvm/sbin/dmidecode \
-	tests/zvm/sbin/id \
 	tests/zvm/sbin/uname \
 	tests/zvm/sbin/virt-what-cpuid-helper \
 	$(TESTS)
