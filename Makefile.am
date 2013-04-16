@@ -45,6 +45,7 @@ TESTS = \
 	tests/test-kvm.sh \
 	tests/test-kvm-explicit-cpu.sh \
 	tests/test-linux-vserver.sh \
+	tests/test-lxc.sh \
 	tests/test-lx86.sh \
 	tests/test-parallels-desktop.sh \
 	tests/test-qemu.sh \
@@ -93,6 +94,13 @@ EXTRA_DIST = \
 	tests/linux-vserver/sbin/id \
 	tests/linux-vserver/sbin/uname \
 	tests/linux-vserver/sbin/virt-what-cpuid-helper \
+	tests/lxc/proc/1/environ \
+	tests/lxc/proc/cpuinfo \
+	tests/lxc/proc/self/status \
+	tests/lxc/sbin/dmidecode \
+	tests/lxc/sbin/id \
+	tests/lxc/sbin/uname \
+	tests/lxc/sbin/virt-what-cpuid-helper \
 	tests/lx86/proc/cpuinfo \
 	tests/lx86/proc/self/status \
 	tests/lx86/sbin/dmidecode \
