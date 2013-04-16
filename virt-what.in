@@ -60,7 +60,7 @@ while true; do
             root="$2"
             shift 2
             ;;
-	-v|--version) echo $VERSION; exit 0 ;;
+	-v|--version) echo "$VERSION"; exit 0 ;;
 	--) shift; break ;;
 	*) fail "internal error ($1)" ;;
     esac
@@ -71,7 +71,7 @@ done
 # Add /usr/libexec to the path so we can find the helper binary.
 prefix=@prefix@
 exec_prefix=@exec_prefix@
-PATH=$root@libexecdir@:$root/sbin:$root/usr/sbin:$PATH
+PATH="${root}@libexecdir@:${root}/sbin:${root}/usr/sbin:${PATH}"
 
 # Check we're running as root.
 
@@ -131,7 +131,7 @@ fi
 # container)
 # /proc/bc - exists on node, but not inside container.
 
-if [ -d $root/proc/vz -a ! -d $root/proc/bc ]; then
+if [ -d "${root}/proc/vz" -a ! -d "${root}/proc/bc" ]; then
     echo openvz
 fi
 
@@ -139,24 +139,24 @@ fi
 # http://www.freedesktop.org/wiki/Software/systemd/ContainerInterface
 # Added by Marc Fournier
 
-if [ -e $root/proc/1/environ ] &&
-    cat $root/proc/1/environ | tr '\000' '\n' | grep -Eiq '^container='; then
+if [ -e "${root}/proc/1/environ" ] &&
+    cat "${root}/proc/1/environ" | tr '\000' '\n' | grep -Eiq '^container='; then
     echo lxc
 fi
 
 # Check for Linux-VServer
-if cat $root/proc/self/status | grep -q "VxID: [0-9]*"; then
+if cat "${root}/proc/self/status" | grep -q "VxID: [0-9]*"; then
     echo linux_vserver
 fi
 
 # Check for UML.
 # Added by Laurent Léonard.
-if grep -q 'UML' $root/proc/cpuinfo; then
+if grep -q 'UML' "${root}/proc/cpuinfo"; then
     echo uml
 fi
 
 # Check for IBM PowerVM Lx86 Linux/x86 emulator.
-if grep -q '^vendor_id.*PowerVM Lx86' $root/proc/cpuinfo; then
+if grep -q '^vendor_id.*PowerVM Lx86' "${root}/proc/cpuinfo"; then
     echo powervm_lx86
 fi
 
@@ -167,12 +167,12 @@ if echo "$dmi" | grep -q 'Manufacturer.*HITACHI' &&
 fi
 
 # Check for IBM SystemZ.
-if grep -q '^vendor_id.*IBM/S390' $root/proc/cpuinfo; then
+if grep -q '^vendor_id.*IBM/S390' "${root}/proc/cpuinfo"; then
     echo ibm_systemz
-    if [ -f $root/proc/sysinfo ]; then
-        if grep -q 'VM.*Control Program.*z/VM' $root/proc/sysinfo; then
+    if [ -f "${root}/proc/sysinfo" ]; then
+        if grep -q 'VM.*Control Program.*z/VM' "${root}/proc/sysinfo"; then
             echo ibm_systemz-zvm
-        elif grep -q '^LPAR' $root/proc/sysinfo; then
+        elif grep -q '^LPAR' "${root}/proc/sysinfo"; then
             echo ibm_systemz-lpar
         else
             # This is unlikely to be correct.
@@ -192,22 +192,22 @@ fi
 if [ "$cpuid" = "XenVMMXenVMM" ]; then
     echo xen; echo xen-hvm
     skip_qemu_kvm=true
-elif [ -f $root/proc/xen/capabilities ]; then
+elif [ -f "${root}/proc/xen/capabilities" ]; then
     echo xen
-    if grep -q "control_d" $root/proc/xen/capabilities; then
+    if grep -q "control_d" "${root}/proc/xen/capabilities"; then
         echo xen-dom0
     else
         echo xen-domU
     fi
     skip_qemu_kvm=true
-elif [ -f $root/sys/hypervisor/type ] &&
-    grep -q "xen" $root/sys/hypervisor/type; then
+elif [ -f "${root}/sys/hypervisor/type" ] &&
+    grep -q "xen" "${root}/sys/hypervisor/type"; then
     # Ordinary kernel with pv_ops.  There does not seem to be
     # enough information at present to tell whether this is dom0
     # or domU.  XXX
     echo xen
 elif [ "$arch" = "ia64" ]; then
-    if [ -d $root/sys/bus/xen -a ! -d $root/sys/bus/xen-backend ]; then
+    if [ -d "${root}/sys/bus/xen" -a ! -d "${root}/sys/bus/xen-backend" ]; then
         # PV-on-HVM drivers installed in a Xen guest.
         echo xen
         echo xen-hvm
@@ -230,7 +230,7 @@ fi
 # seen that it's Parallels.  Xen uses QEMU as the device model, so
 # skip this test if we know it is Xen.
 
-if ! $skip_qemu_kvm; then
+if ! "$skip_qemu_kvm"; then
     if [ "$cpuid" = "KVMKVMKVM" ]; then
 	echo kvm
     else
@@ -238,7 +238,7 @@ if ! $skip_qemu_kvm; then
         # option, since /proc/cpuinfo will not contain the QEMU
         # string.  The long term fix for this would be to export
         # another CPUID leaf for non-accelerated qemu.
-        if grep -q 'QEMU' $root/proc/cpuinfo; then
+        if grep -q 'QEMU' "${root}/proc/cpuinfo"; then
 	    echo qemu
 	fi
     fi
