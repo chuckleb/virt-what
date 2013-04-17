@@ -66,6 +66,12 @@ This process is running in a Linux VServer container.
 
 Status: contributed by Barış Metin
 
+=item B<lxc>
+
+This process is running in a Linux LXC container.
+
+Status: contributed by Marc Fournier
+
 =item B<kvm>
 
 This guest is running on the KVM hypervisor using hardware
