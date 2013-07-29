@@ -1,5 +1,8 @@
 *~
+*.log
+*.trs
 *.o
+
 /virt-what-*.tar.gz
 /.deps
 /Makefile
@@ -18,6 +21,7 @@
 /install-sh
 /missing
 /stamp-h1
+/test-driver
 /virt-what
 /virt-what-cpuid-helper
 /virt-what.1
