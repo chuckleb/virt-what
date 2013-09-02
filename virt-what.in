@@ -147,6 +147,11 @@ fi
 # Check for Linux-VServer
 if cat "${root}/proc/self/status" | grep -q "VxID: [0-9]*"; then
     echo linux_vserver
+    if grep -q "VxID: 0$" "${root}/proc/self/status"; then
+        echo linux_vserver-host
+    else
+        echo linux_vserver-guest
+    fi
 fi
 
 # Check for UML.

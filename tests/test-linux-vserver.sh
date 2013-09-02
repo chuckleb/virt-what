@@ -19,7 +19,8 @@
 root=tests/linux-vserver
 
 output="$(./virt-what --test-root=$root 2>&1)"
-expected="linux_vserver"
+expected="linux_vserver
+linux_vserver-guest"
 
 if [ "$output" != "$expected" ]; then
     echo "$0: test failed because output did not match expected"
