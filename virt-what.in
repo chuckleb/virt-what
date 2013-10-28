@@ -199,7 +199,7 @@ if [ "$cpuid" = "XenVMMXenVMM" ]; then
     skip_qemu_kvm=true
 elif [ -d "${root}/proc/xen" ]; then
     echo xen
-    if grep -q "control_d" "${root}/proc/xen/capabilities"; then
+    if grep -q "control_d" "${root}/proc/xen/capabilities" 2>/dev/null; then
         echo xen-dom0
     else
         echo xen-domU
