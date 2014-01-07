@@ -15,7 +15,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 
-AC_INIT([virt-what],[1.13])
+AC_INIT([virt-what],[1.14])
 AM_INIT_AUTOMAKE([foreign])
 
 dnl Check for basic C environment.
