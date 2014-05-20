@@ -113,7 +113,7 @@ Status: contributed by Justin Clift
 
 The guest is running inside IBM PowerVM Lx86 Linux/x86 emulator.
 
-Status: data originally supplied by Jeffrey Scheel, confimed by
+Status: data originally supplied by Jeffrey Scheel, confirmed by
 Yufang Zhang and RWMJ
 
 =item B<qemu>
