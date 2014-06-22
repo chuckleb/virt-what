@@ -248,3 +248,8 @@ if ! "$skip_qemu_kvm"; then
 	fi
     fi
 fi
+
+# Check for Docker.
+if [ -f "${root}/.dockerinit" ]; then
+	echo docker
+fi

@@ -40,6 +40,7 @@ endif
 
 TESTS = \
 	tests/test-baremetal.sh \
+	tests/test-docker.sh \
 	tests/test-esx4.1.sh \
 	tests/test-hyperv.sh \
 	tests/test-kvm.sh \
@@ -63,6 +64,12 @@ EXTRA_DIST = \
 	tests/baremetal/sbin/dmidecode \
 	tests/baremetal/sbin/uname \
 	tests/baremetal/sbin/virt-what-cpuid-helper \
+	tests/docker/.dockerinit \
+	tests/docker/proc/cpuinfo \
+	tests/docker/proc/self/status \
+	tests/docker/sbin/dmidecode \
+	tests/docker/sbin/uname \
+	tests/docker/sbin/virt-what-cpuid-helper \
 	tests/esx4.1/proc/cpuinfo \
 	tests/esx4.1/proc/self/status \
 	tests/esx4.1/sbin/dmidecode \
