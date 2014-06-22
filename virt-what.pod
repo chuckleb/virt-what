@@ -25,6 +25,12 @@ don't know about or cannot detect.
 
 =over 4
 
+=item B<docker>
+
+This is a Docker container.
+
+Status: confirmed by Charles Nguyen
+
 =item B<hyperv>
 
 This is Microsoft Hyper-V hypervisor.
