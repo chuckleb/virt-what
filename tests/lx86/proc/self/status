@@ -1,0 +1,36 @@
+Name:	cat
+State:	R (running)
+SleepAVG:	78%
+Tgid:	12404
+Pid:	12404
+PPid:	7182
+TracerPid:	0
+Uid:	0	0	0	0
+Gid:	0	0	0	0
+FDSize:	8192
+Groups:	0 1 2 3 4 6 10 
+VmPeak:	   89280 kB
+VmSize:	   89280 kB
+VmLck:	       0 kB
+VmHWM:	   17152 kB
+VmRSS:	   17152 kB
+VmData:	   12928 kB
+VmStk:	    1408 kB
+VmExe:	553650368 kB
+VmLib:	18446744073155908992 kB
+VmPTE:	     256 kB
+StaBrk:	0804e000 kB
+Brk:	0806f000 kB
+StaStk:	bffe0000 kB
+Threads:	1
+SigQ:	1/14784
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000000000
+SigIgn:	0000000000000000
+SigCgt:	40000000418004fc
+CapInh:	0000000000000000
+CapPrm:	00000000fffffeff
+CapEff:	00000000fffffeff
+Cpus_allowed:	00000000,00000000,00000000,0000000f
+Mems_allowed:	0001

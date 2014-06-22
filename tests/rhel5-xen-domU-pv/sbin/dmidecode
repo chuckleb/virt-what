@@ -1,0 +1,6 @@
+#!/bin/sh -
+# See https://bugzilla.redhat.com/show_bug.cgi?id=210295
+cat <<'EOF'
+# dmidecode 2.10
+/dev/mem: mmap: Bad address
+EOF

@@ -1,0 +1,20 @@
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 6
+model		: 2
+model name	: QEMU Virtual CPU version 0.13.0
+stepping	: 3
+cpu MHz		: 2659.401
+cache size	: 512 KB
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 4
+wp		: yes
+flags		: fpu pse tsc msr pae mce cx8 apic mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx lm up unfair_spinlock pni cx16 popcnt hypervisor lahf_lm svm abm sse4a
+bogomips	: 5318.80
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+

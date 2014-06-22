@@ -1,0 +1,67 @@
+Manufacturer:         IBM             
+Type:                 2097
+Model:                718              E26             
+Sequence Code:        000000000009C5C2
+Plant:                02  
+Model Capacity:       718              00001390
+Model Perm. Capacity: 718              00001390
+Model Temp. Capacity: 718              00001390
+
+CPUs Total:           34
+CPUs Configured:      18
+CPUs Standby:         0
+CPUs Reserved:        16
+Capability:           904 1350
+Adjustment 02-way:    61500 61500
+Adjustment 03-way:    59260 59500
+Adjustment 04-way:    57480 57300
+Adjustment 05-way:    55800 55700
+Adjustment 06-way:    54700 54300
+Adjustment 07-way:    53600 53100
+Adjustment 08-way:    52500 52040
+Adjustment 09-way:    51200 51000
+Adjustment 10-way:    50100 50000
+Adjustment 11-way:    49000 49020
+Adjustment 12-way:    48000 48120
+Adjustment 13-way:    47200 47300
+Adjustment 14-way:    46400 46500
+Adjustment 15-way:    45600 45800
+Adjustment 16-way:    44800 45200
+Adjustment 17-way:    44300 44680
+Adjustment 18-way:    43900 44120
+Adjustment 19-way:    43500 43640
+Adjustment 20-way:    43100 43200
+Adjustment 21-way:    42600 42740
+Adjustment 22-way:    42300 42360
+Adjustment 23-way:    42000 41980
+Adjustment 24-way:    41700 41600
+Adjustment 25-way:    41400 41240
+Adjustment 26-way:    41100 40960
+Adjustment 27-way:    40800 40680
+Adjustment 28-way:    40400 40360
+Adjustment 29-way:    40100 40120
+Adjustment 30-way:    39800 39840
+Adjustment 31-way:    39500 39560
+Adjustment 32-way:    39200 39300
+Adjustment 33-way:    38900 39100
+Adjustment 34-way:    38600 38840
+Secondary Capability: 904
+
+LPAR Number:          21
+LPAR Characteristics: Shared 
+LPAR Name:            L15     
+LPAR Adjustment:      222
+LPAR CPUs Total:      8
+LPAR CPUs Configured: 4
+LPAR CPUs Standby:    4
+LPAR CPUs Reserved:   0
+LPAR CPUs Dedicated:  0
+LPAR CPUs Shared:     4
+
+VM00 Name:            DEVEL1  
+VM00 Control Program: z/VM    5.3.0   
+VM00 Adjustment:      1000
+VM00 CPUs Total:      4
+VM00 CPUs Configured: 4
+VM00 CPUs Standby:    0
+VM00 CPUs Reserved:   0

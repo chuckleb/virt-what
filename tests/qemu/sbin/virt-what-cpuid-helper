@@ -1,0 +1,4 @@
+#!/bin/sh -
+# For reasons that are genuinely unknown, virt-what-cpuid-helper
+# in a qemu guest prints out a '?' character.
+echo '?'

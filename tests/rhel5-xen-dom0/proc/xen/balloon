@@ -1,0 +1,6 @@
+Current allocation:  1772544 kB
+Requested target:    1772544 kB
+Low-mem balloon:        1344 kB
+High-mem balloon:          0 kB
+Driver pages:           1024 kB
+Xen hard limit:          ??? kB

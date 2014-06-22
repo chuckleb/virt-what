@@ -1,0 +1,336 @@
+=encoding utf8
+
+=head1 NAME
+
+virt-what - detect if we are running in a virtual machine
+
+=head1 SUMMARY
+
+virt-what [options]
+
+=head1 DESCRIPTION
+
+C<virt-what> is a shell script which can be used to detect if the
+program is running in a virtual machine.
+
+The program prints out a list of "facts" about the virtual machine,
+derived from heuristics.  One fact is printed per line.
+
+If nothing is printed and the script exits with code 0 (no error),
+then it can mean I<either> that the program is running on bare-metal
+I<or> the program is running inside a type of virtual machine which we
+don't know about or cannot detect.
+
+=head1 FACTS
+
+=over 4
+
+=item B<hyperv>
+
+This is Microsoft Hyper-V hypervisor.
+
+Status: confirmed by RWMJ
+
+=item B<ibm_systemz>
+
+This is an IBM SystemZ (or other S/390) hardware partitioning system.
+Additional facts listed below may also be printed.
+
+=item B<ibm_systemz-direct>
+
+This is Linux running directly on a IBM SystemZ hardware partitioning
+system.
+
+This is expected to be a highly unusual configuration - if
+you see this result you should treat it with suspicion.
+
+Status: not confirmed
+
+=item B<ibm_systemz-lpar>
+
+This is Linux running directly on an LPAR on an IBM SystemZ
+hardware partitioning system.
+
+Status: not confirmed
+
+=item B<ibm_systemz-zvm>
+
+This is a z/VM guest running in an LPAR on an IBM SystemZ
+hardware partitioning system.
+
+Status: confirmed by RWMJ using a Fedora guest running in z/VM
+
+=item B<linux_vserver>
+
+This is printed for backwards compatibility with older virt-what which
+could not distinguish between a Linux VServer container guest and
+host.
+
+=item B<linux_vserver-guest>
+
+This process is running in a Linux VServer container.
+
+Status: contributed by Barış Metin
+
+=item B<linux_vserver-host>
+
+This process is running as the Linux VServer host (VxID 0).
+
+Status: contributed by Barış Metin and Elan Ruusamäe
+
+=item B<lxc>
+
+This process is running in a Linux LXC container.
+
+Status: contributed by Marc Fournier
+
+=item B<kvm>
+
+This guest is running on the KVM hypervisor using hardware
+acceleration.
+
+Note that if the hypervisor is using software acceleration
+you should I<not> see this, but should see the C<qemu> fact
+instead.
+
+Status: confirmed by RWMJ.
+
+=item B<openvz>
+
+The guest appears to be running inside an OpenVZ or Virtuozzo
+container.
+
+Status: contributed by Evgeniy Sokolov
+
+=item B<parallels>
+
+The guest is running inside Parallels Virtual Platform
+(Parallels Desktop, Parallels Server).
+
+Status: contributed by Justin Clift
+
+=item B<powervm_lx86>
+
+The guest is running inside IBM PowerVM Lx86 Linux/x86 emulator.
+
+Status: data originally supplied by Jeffrey Scheel, confirmed by
+Yufang Zhang and RWMJ
+
+=item B<qemu>
+
+This is QEMU hypervisor using software emulation.
+
+Note that for KVM (hardware accelerated) guests you should I<not> see
+this.
+
+Status: confirmed by RWMJ.
+
+=item B<uml>
+
+This is a User-Mode Linux (UML) guest.
+
+Status: contributed by Laurent Léonard
+
+=item B<virt>
+
+Some sort of virtualization appears to be present, but we are not sure
+what it is.  In some very rare corner cases where we know that
+virtualization is hard to detect, we will try a timing attack to see
+if certain machine instructions are running much more slowly than they
+should be, which would indicate virtualization.  In this case, the
+generic fact C<virt> is printed.
+
+=item B<virtage>
+
+This is Hitachi Virtualization Manager (HVM) Virtage
+hardware partitioning system.
+
+Status: data supplied by Bhavna Sarathy, not confirmed
+
+=item B<virtualbox>
+
+This is a VirtualBox guest.
+
+Status: contributed by Laurent Léonard
+
+=item B<virtualpc>
+
+The guest appears to be running on Microsoft VirtualPC.
+
+Status: not confirmed
+
+=item B<vmware>
+
+The guest appears to be running on VMware hypervisor.
+
+Status: confirmed by RWMJ
+
+=item B<xen>
+
+The guest appears to be running on Xen hypervisor.
+
+Status: confirmed by RWMJ
+
+=item B<xen-dom0>
+
+This is the Xen dom0 (privileged domain).
+
+Status: confirmed by RWMJ
+
+=item B<xen-domU>
+
+This is a Xen domU (paravirtualized guest domain).
+
+Status: confirmed by RWMJ
+
+=item B<xen-hvm>
+
+This is a Xen guest fully virtualized (HVM).
+
+Status: confirmed by RWMJ
+
+=back
+
+=head1 EXIT STATUS
+
+Programs that use or wrap C<virt-what> should check that the exit
+status is 0 before they attempt to parse the output of the command.
+
+A non-zero exit status indicates some error, for example, an
+unrecognized command line argument.  If the exit status is non-zero
+then the output "facts" (if any were printed) cannot be guaranteed and
+should be ignored.
+
+The exit status does I<not> have anything to do with whether the
+program is running on baremetal or under virtualization, nor with
+whether C<virt-what> managed detection "correctly" (which is basically
+unknowable given the large variety of virtualization systems out there
+and that some systems deliberately emulate others).
+
+=head1 RUNNING VIRT-WHAT FROM OTHER PROGRAMS
+
+C<virt-what> is designed so that you can easily run it from
+other programs or wrap it up in a library.
+
+Your program should check the exit status (see the section above).
+
+Some programming languages (notably Python: issue 1652) erroneously
+mask the C<SIGPIPE> signal and do not restore it when executing
+subprocesses.  C<virt-what> is a shell script and some shell commands
+do not work correctly when you do this.  You may see warnings from
+C<virt-what> similar to this:
+
+ echo: write error: Broken pipe
+
+The solution is to set the C<SIGPIPE> signal handler back to C<SIG_DFL>
+before running C<virt-what>.
+
+=head1 IMPORTANT NOTE
+
+Most of the time, using this program is the I<wrong> thing to do.
+Instead you should detect the specific features you actually want to
+use.  (As an example, if you wanted to issue Xen hypervisor commands
+you would look for the C</proc/xen/privcmd> file).
+
+However people keep asking for this, so we provide it.  There are a
+few legitimate uses:
+
+=over 4
+
+=item Bug reporting tool
+
+If you think that virtualization could affect how your program runs,
+then you might use C<virt-what> to report this in a bug reporting
+tool.
+
+=item Status display and monitoring tools
+
+You might include this information in status and monitoring programs.
+
+=item System tuning (sometimes)
+
+You might use this program to tune an operating system so it runs
+better as a virtual machine of a particular hypervisor.  However if
+installing paravirtualized drivers, it's better to check for the
+specific features your drivers need (eg. for the presence of PCI devices).
+
+=back
+
+=head1 SEE ALSO
+
+L<http://people.redhat.com/~rjones/virt-what/>,
+L<http://www.vmware.com/>,
+L<http://www.microsoft.com/windows/products/winfamily/virtualpc>,
+L<http://xensource.com/>,
+L<http://bellard.org/qemu/>,
+L<http://kvm.qumranet.com/>,
+L<http://openvz.org/>
+
+=head1 AUTHORS
+
+Richard W.M. Jones <rjones @ redhat . com>
+
+=head1 COPYRIGHT
+
+(C) Copyright 2008-2011 Red Hat Inc.,
+L<http://people.redhat.com/~rjones/virt-what/>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+=head1 REPORTING BUGS
+
+Bugs can be viewed on the Red Hat Bugzilla page:
+L<https://bugzilla.redhat.com/>.
+
+If you find a bug in virt-what, please follow these steps to report it:
+
+=over 4
+
+=item 1. Check for existing bug reports
+
+Go to L<https://bugzilla.redhat.com/> and search for similar bugs.
+Someone may already have reported the same bug, and they may even
+have fixed it.
+
+=item 2. Capture debug and error messages
+
+Run
+
+ virt-what > virt-what.log 2>&1
+
+and keep I<virt-what.log>.  It may contain error messages which you
+should submit with your bug report.
+
+=item 3. Get version of virt-what.
+
+Run
+
+ virt-what --version
+
+=item 4. Submit a bug report.
+
+Go to L<https://bugzilla.redhat.com/> and enter a new bug.
+Please describe the problem in as much detail as possible.
+
+Remember to include the version numbers (step 3) and the debug
+messages file (step 2) and as much other detail as possible.
+
+=item 5. Assign the bug to rjones @ redhat.com
+
+Assign or reassign the bug to B<rjones @ redhat.com> (without the
+spaces).  You can also send me an email with the bug number if you
+want a faster response.
+
+=back

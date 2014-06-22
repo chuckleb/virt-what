@@ -1,0 +1,6 @@
+#!/bin/sh -
+cat <<'EOF'
+# dmidecode 2.11
+/dev/mem: Operation not permitted
+EOF
+exit 1

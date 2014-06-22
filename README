@@ -1,0 +1,93 @@
+virt-what
+Copyright (C) 2008-2011 Red Hat Inc.
+----------------------------------------------------------------------
+
+This is a collection of scripts which you can use to work out what
+sort of virtualization you are running inside.  Please read the manual
+page virt-what(1) to find out how to use it.  This file is for
+developers and people compiling from source.
+
+Compiling and installing
+----------------------------------------------------------------------
+
+Build from a tarball:
+
+  ./configure
+  make
+
+Build from git (http://git.annexia.org/?p=virt-what.git;a=summary):
+
+  autoreconf -i
+  autoconf
+  ./configure
+  make
+
+Run the automated regression tests:
+
+  make check
+
+If you want to run it from the local directory (without needing to
+install), then you have to set the PATH:
+
+  PATH=.:$PATH virt-what
+
+or since virt-what normally needs to be run as root:
+
+  su -c 'PATH=.:$PATH virt-what'
+
+To install (usually as root):
+
+  make install
+
+also:
+
+  make prefix=/usr install
+  make DESTDIR=/tmp/somewhere install
+
+Contributing a virtualization test
+----------------------------------------------------------------------
+
+virt-what is especially dependent on outside contributors because it's
+hard to even get access to some of the hypervisors out there, and even
+for the common hypervisors there are many different versions and many
+different ways for to break.  For these reasons we are especially
+happy if you contribute to or even just test virt-what :-)
+
+virt-what is a simple shell script.  Add a new hypervisor test to
+'virt-what.in' ('virt-what' in this directory is a generated file).
+
+If you can't contribute a patch, please just send us the following
+data (all as root from inside the guest):
+
+  (1) /proc/cpuinfo
+
+  (2) dmidecode
+
+  (3) If possible, send the output of /usr/libexec/virt-what-cpuid-helper
+
+  (4) Any other /proc and /sys files that may be related to the
+      hypervisor.
+
+  (5) Name of the virtualization system, version, host or guest,
+      and as much other information as possible.
+
+Please send patches, test results or any other data to:
+
+  https://www.redhat.com/mailman/listinfo/virt-tools-list
+
+See also: http://virt-tools.org/contact/
+
+Contributing a regression test
+----------------------------------------------------------------------
+
+In the tests/ subdirectory you'll find some existing tests.
+
+These tests are taken from real machines, and we have a policy of
+*only* adding real data here so that our regression tests are
+impeccable.
+
+The virt-what script has a hidden '--test-root' option which allows a
+different root directory to be specified for these regression tests.
+The tests/ subdirectory contains some alternate root filesystems
+(sparsely populated with a few files taken from the real systems) for
+testing.

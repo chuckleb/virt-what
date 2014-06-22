@@ -1,0 +1,76 @@
+processor	: 0
+vendor_id	: PowerVM Lx86
+cpu family	: 6
+model		: 8
+model name	: PowerVM Lx86
+stepping	: 6
+cpu MHz		: 3826.000
+cache size	: 256 KB
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 2
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 mtrr pge mca cmov pat pse36 mmx
+bogomips	: 7652.000
+
+processor	: 1
+vendor_id	: PowerVM Lx86
+cpu family	: 6
+model		: 8
+model name	: PowerVM Lx86
+stepping	: 6
+cpu MHz		: 3826.000
+cache size	: 256 KB
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 2
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 mtrr pge mca cmov pat pse36 mmx
+bogomips	: 7652.000
+
+processor	: 2
+vendor_id	: PowerVM Lx86
+cpu family	: 6
+model		: 8
+model name	: PowerVM Lx86
+stepping	: 6
+cpu MHz		: 3826.000
+cache size	: 256 KB
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 2
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 mtrr pge mca cmov pat pse36 mmx
+bogomips	: 7652.000
+
+processor	: 3
+vendor_id	: PowerVM Lx86
+cpu family	: 6
+model		: 8
+model name	: PowerVM Lx86
+stepping	: 6
+cpu MHz		: 3826.000
+cache size	: 256 KB
+fdiv_bug	: no
+hlt_bug		: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 2
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 mtrr pge mca cmov pat pse36 mmx
+bogomips	: 7652.000
+

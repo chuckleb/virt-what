@@ -1,0 +1,5 @@
+#!/bin/sh -
+cat <<'EOF'
+# dmidecode 2.10
+/dev/mem: mmap: Bad address
+EOF
